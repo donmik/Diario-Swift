@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="IHT-4b-IZ9">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Pruebas teclado-->
+        <scene sceneID="udT-Ve-VpF">
+            <objects>
+                <tableViewController title="Pruebas teclado" extendedLayoutIncludesOpaqueBars="YES" id="oyI-GP-NBB" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="TsO-K8-lME">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <sections>
+                            <tableViewSection id="zjW-8C-bGe">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="b1D-3Z-A8D">
+                                        <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="b1D-3Z-A8D" id="cT4-9x-DzR">
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Campos posicionados al final de la view" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DwQ-Z1-NW2">
+                                                    <rect key="frame" x="8" y="11" width="551" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="DwQ-Z1-NW2" secondAttribute="trailing" id="FXI-XW-l5d"/>
+                                                <constraint firstItem="DwQ-Z1-NW2" firstAttribute="leading" secondItem="cT4-9x-DzR" secondAttribute="leadingMargin" id="hcf-my-AbM"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="show" id="wib-Cm-EBt"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="cvA-LA-o2d">
+                                        <rect key="frame" x="0.0" y="108" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cvA-LA-o2d" id="dqO-uv-oby">
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Campos posicionados en el centro de la view" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gjP-gz-KRQ">
+                                                    <rect key="frame" x="8" y="11" width="551" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="gjP-gz-KRQ" firstAttribute="trailing" secondItem="dqO-uv-oby" secondAttribute="trailingMargin" id="UqF-Hf-gwV"/>
+                                                <constraint firstItem="gjP-gz-KRQ" firstAttribute="leading" secondItem="dqO-uv-oby" secondAttribute="leadingMargin" id="cRy-nx-KWB"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="JJK-tt-azG" kind="show" id="rKZ-aA-MXI"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="oyI-GP-NBB" id="uMN-lC-DFH"/>
+                            <outlet property="delegate" destination="oyI-GP-NBB" id="Sqy-MU-V6Z"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Test" id="deS-ZQ-sJD"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" translucent="NO" prompted="NO"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8a2-Hu-9I8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1378" y="479"/>
+        </scene>
+        <!--Campos al final-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController title="Campos al final" id="BYZ-38-t0r" customClass="Test1ViewController" customModule="DiarioSwift5" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Segundo campo" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uYG-Qn-ZER">
+                                <rect key="frame" x="145" y="498" width="311" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="go"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="dOM-gA-fhR"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Primer campo" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zGk-HA-xSc">
+                                <rect key="frame" x="145" y="460" width="311" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="22q-ka-vbW"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="zGk-HA-xSc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0GB-fW-erF"/>
+                            <constraint firstItem="uYG-Qn-ZER" firstAttribute="top" secondItem="zGk-HA-xSc" secondAttribute="bottom" constant="8" id="MRf-QC-b6P"/>
+                            <constraint firstItem="uYG-Qn-ZER" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QnK-Ce-i0C"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="uYG-Qn-ZER" secondAttribute="bottom" constant="8" id="XTl-pB-jLM"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Test 1" id="Kcw-GI-K5O"/>
+                    <connections>
+                        <outlet property="primerCampo" destination="zGk-HA-xSc" id="dFE-G0-7h3"/>
+                        <outlet property="segundoCampo" destination="uYG-Qn-ZER" id="gaz-67-kkx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2192" y="-16"/>
+        </scene>
+        <!--Campos en el centro-->
+        <scene sceneID="OYb-9Y-1d3">
+            <objects>
+                <viewController title="Campos en el centro" id="JJK-tt-azG" customClass="Test2ViewController" customModule="DiarioSwift5" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qDH-DT-Ppk"/>
+                        <viewControllerLayoutGuide type="bottom" id="jdb-Rz-gJH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="INX-Hk-AAN">
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Primer campo" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5iY-37-l6P">
+                                <rect key="frame" x="145" y="253" width="311" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                <connections>
+                                    <outlet property="delegate" destination="JJK-tt-azG" id="k7i-MY-Ai8"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Segundo campo" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g8S-gf-Z75">
+                                <rect key="frame" x="145" y="291" width="311" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="go"/>
+                                <connections>
+                                    <outlet property="delegate" destination="JJK-tt-azG" id="PzV-rv-1cQ"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="g8S-gf-Z75" firstAttribute="top" secondItem="5iY-37-l6P" secondAttribute="bottom" constant="8" id="P2O-DF-tt1"/>
+                            <constraint firstItem="5iY-37-l6P" firstAttribute="centerY" secondItem="INX-Hk-AAN" secondAttribute="centerY" id="P5n-LA-Hzm"/>
+                            <constraint firstItem="5iY-37-l6P" firstAttribute="centerX" secondItem="INX-Hk-AAN" secondAttribute="centerX" id="b4C-07-GTL"/>
+                            <constraint firstItem="g8S-gf-Z75" firstAttribute="centerX" secondItem="INX-Hk-AAN" secondAttribute="centerX" id="m6x-z6-sDO"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Test 1" id="JPU-FO-Gxx"/>
+                    <connections>
+                        <outlet property="primerCampo" destination="5iY-37-l6P" id="F2r-Pm-ZbB"/>
+                        <outlet property="segundoCampo" destination="g8S-gf-Z75" id="sNt-Xr-jVY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ssM-nA-Ye4" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2192" y="770"/>
+        </scene>
+        <!--Pruebas teclado-->
+        <scene sceneID="aJG-c3-Lmk">
+            <objects>
+                <navigationController title="Pruebas teclado" automaticallyAdjustsScrollViewInsets="NO" id="IHT-4b-IZ9" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="aI3-ZC-Iqr">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="oyI-GP-NBB" kind="relationship" relationship="rootViewController" id="YtB-8e-9hg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TfA-se-dHI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="566" y="479"/>
+        </scene>
+    </scenes>
+</document>
