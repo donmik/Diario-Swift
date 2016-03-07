@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  Test1ViewController.swift
 //  DiarioSwift5
 //
 //  Created by Miguel López Álvarez on 5/3/16.
@@ -26,11 +26,15 @@ class Test1ViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
+        // 1. Escuchar las notificaciones del teclado.
         registerForKeyboardNotifications()
     }
     
     override func viewDidDisappear(animated: Bool) {
         super.viewDidDisappear(animated)
+        
+        // Siempre hay que dejar de escuchar las notificaciones.
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
 
@@ -38,11 +42,13 @@ class Test1ViewController: UIViewController {
 
 extension Test1ViewController: UITextFieldDelegate {
     
+    // Registro notificaciones teclado.
     private func registerForKeyboardNotifications() {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
     }
     
+    // Cuando el teclado se va a mostrar.
     func keyboardWillShow(notification: NSNotification) {
         guard let activeField = self.activeField else {
             // Si activeField es nil, no se hace nada.
@@ -73,11 +79,12 @@ extension Test1ViewController: UITextFieldDelegate {
                 // El campo está oculto por el teclado.
                 
                 // Hay que mover la view principal hacia arriba.
-                // Calcular el nuevo Y restando la altura del teclado a la posición y del viewFrameActual.
-                let newViewY = viewFrameActual.origin.y - keyboardSize.height
+                // Calcular el nuevo Y restando el punto inferior del campo Y a la viewFrameActual.
+                // Además resto 8 más para darle holgura y no dejarlo pegado al teclado.
+                let newViewY = viewFrameActual.height - puntoEsquinaIzquierdaInferiorActiveField.y - 8.0
                 
                 // Crear nuevo frame con la nueva Y. El resto de datos seguirá sin cambiar.
-                let newViewFrame = CGRectMake(viewFrameActual.origin.x, newViewY, viewFrameActual.width, viewFrameActual.height)
+                let newViewFrame = CGRectMake(view.frame.origin.x, newViewY, view.frame.width, view.frame.height)
                 
                 // En conjunción con la duración de la animación del teclado.
                 if let seconds = notification.userInfo?[UIKeyboardAnimationDurationUserInfoKey]?.doubleValue {
@@ -89,6 +96,7 @@ extension Test1ViewController: UITextFieldDelegate {
         }
     }
     
+    // Cuando el teclado se va a ocultar.
     func keyboardWillHide(notification: NSNotification) {
         if let seconds = notification.userInfo?[UIKeyboardAnimationDurationUserInfoKey]?.doubleValue {
             UIView.animateWithDuration(seconds) {
@@ -97,6 +105,17 @@ extension Test1ViewController: UITextFieldDelegate {
         }
     }
     
+    // Cuando un campo va a ser editado.
+    func textFieldDidBeginEditing(textField: UITextField) {
+        activeField = textField
+    }
+    
+    // Cuando un campo deja de ser editado.
+    func textFieldDidEndEditing(textField: UITextField) {
+        activeField = nil
+    }
+    
+    // Método que controla el botón Siguiente e Ir.
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         guard let field = TextFieldTag(rawValue: textField.tag) else {
             print("No se conoce este texfield")
@@ -106,24 +125,15 @@ extension Test1ViewController: UITextFieldDelegate {
         switch field {
         case .PrimerCampo:
             segundoCampo.becomeFirstResponder()
-            activeField = segundoCampo
             
         case .SegundoCampo:
             segundoCampo.resignFirstResponder()
-            activeField = nil
         }
         
         return true
     }
     
-    func textFieldDidBeginEditing(textField: UITextField) {
-        activeField = textField
-    }
-    
-    func textFieldDidEndEditing(textField: UITextField) {
-        activeField = nil
-    }
-    
+    // Método que oculta el teclado cuando se toca en cualquier lugar de la vista.
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         view.endEditing(true)
     }
